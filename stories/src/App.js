@@ -14,6 +14,7 @@ class App extends Component {
         <Route exact path="/" component={StoryList}/>
         <Route path="/login" component={LoginPage}/>
         <Route path="/submissions" component={SubmissionPage}/>
+
       </div>
     );
   }
