@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
-import StoryList from './components/StoriesPage/StoryList';
+import StoryList from './components/StoriesPage/StoryList/StoryList';
 import LoginPage from './components/Admin/Login/LoginPage';
 import SignUpPage from './components/Admin/SignUp/SignUpPage';
 import Authenticate from './components/Authentication/Authenticate';
