@@ -14,7 +14,7 @@ import SubmitPage from './components/SubmitStory/SubmitPage';
 class App extends Component {
   logout(){
     localStorage.removeItem('jwt');
-    this.props.history.push('/');
+    window.location.reload();
   }
 
   render() {
