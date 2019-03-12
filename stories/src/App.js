@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+
+import './Main-Styles/App.scss';
+
 import NavBar from './components/NavBar/NavBar';
 import StoryList from './components/StoriesPage/StoryList/StoryList';
 import LoginPage from './components/Admin/Login/LoginPage';
 import SignUpPage from './components/Admin/SignUp/SignUpPage';
 import Authenticate from './components/Authentication/Authenticate';
 import SubmitPage from './components/SubmitStory/SubmitPage';
-import './App.css';
+
 
 class App extends Component {
   logout(){
