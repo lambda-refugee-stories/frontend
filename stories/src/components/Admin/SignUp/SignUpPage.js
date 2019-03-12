@@ -1,72 +1,41 @@
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 class SignUpPage extends React.Component {
     constructor(){
         super();
         this.state = {
-            username: '',
-            password: '',
-            admin: false,
+            credentials: {
+                username: '',
+                password: '',
+            },
             error: '',
         }
     }
 
-    componentDidMount() {
-        // axios
-        //     .get('https://refugee-stories-backend-rkolk.herokuapp.com/signup')
-        
-        //     .then(response => {
-        //         console.log(response)
-        //         this.setState({
-        //             username: this.state.username,
-        //             password: this.state.password,
-        //         })
-        //     })
-        
-        //     .catch(err => {
-        //         console.log(err)
-        //         this.setState({ error: err })
-        //     });
-    }
-
     handleChanges = event => {
         this.setState({
-            [event.target.name]: event.target.value
+            credentials: {
+                ...this.state.credentials,
+                [event.target.name]: event.target.value
+            }
         });
     };
 
-    signUp = (event, element) => {
-        const user = this.state.username;
-        const pw = this.state.password;
+    signUp = (event) => {
+        event.preventDefault();
+        axios
+            .post('https://refugee-stories-backend-rkolk.herokuapp.com/signup', this.state.credentials)
 
-        if(user.length !== 0 || pw.length !==0){
-            event.preventDefault();
+            .then(response => {
+                console.log(response);
+                this.props.history.push('/submissions');
+            })
 
-            // axios
-            //     .post('https://refugee-stories-backend-rkolk.herokuapp.com/signup', element)
-
-            //     .then(response => {
-            //         console.log(response)
-            //         this.setState({
-            //             username: user,
-            //             password: pw,
-            //             admin: true
-            //         })
-            //     })
-
-            //     .catch(err => {
-            //         console.log(err)
-            //         this.setState({ error: err })
-            //     });
-
-            this.props.history.push('/login');
-        }
-        
-        else{
-            event.preventDefault();
-            alert("All fields are required.");
-        }
+            .catch(err => {
+                console.log(err);
+                this.setState({ error: err });
+            });
     };
 
     render(){
@@ -90,7 +59,7 @@ class SignUpPage extends React.Component {
                         onChange={this.handleChanges}
                     ></input>
                     
-                    <button onClick={this.signUp}>Sign Up</button>
+                    <button type="submit">Sign Up</button>
                 </form>
             </div>
         );
