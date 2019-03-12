@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Story from './Story';
+import Story from '../Story/Story';
 
 
 const dummyData = [
@@ -10,7 +10,7 @@ const dummyData = [
         id: 1,
         title: 'Story from James',
         imageurl: '#',
-        story: 'story story story story story story story story story story story story story story story story story story story story story story story story',
+        story: 'story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story',
         isapproved: true
     },
     {
