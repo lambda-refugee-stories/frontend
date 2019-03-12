@@ -5,49 +5,38 @@ class LoginPage extends React.Component {
     constructor(){
         super();
         this.state = {
-            username: '',
-            password: '',
+            credentials: {
+                username: '',
+                password: '',
+            },
             error: '',
         }
     }
 
     handleChanges = event => {
         this.setState({
-            [event.target.name]: event.target.value
+            credentials: {
+                ...this.state.credentials,
+                [event.target.name]: event.target.value
+            }
         });
     };
 
-    login = (event, element) => {
-        const user = this.state.username;
-        const pw = this.state.password;
+    login = (event) => {
+        event.preventDefault();
 
-        if(user.length !== 0 || pw.length !==0){
-            event.preventDefault();
+        axios
+            .post('https://refugee-stories-backend-rkolk.herokuapp.com/login', this.state.credentials)
 
-            axios
-                .post('https://refugee-stories-backend-rkolk.herokuapp.com/login', element)
+            .then(response => {
+                console.log(response)
+                this.props.history.push('/submissions');
+            })
 
-                .then(response => {
-                    console.log(response)
-                    this.setState({
-                        username: user,
-                        password: pw,
-                        admin: true
-                    })
-
-                    this.props.history.push('/submissions');
-                })
-
-                .catch(err => {
-                    console.log(err)
-                    this.setState({ error: err })
-                });
-        }
-        
-        else{
-            event.preventDefault();
-            alert("All fields are required.");
-        }
+            .catch(err => {
+                console.log(err)
+                this.setState({ error: err })
+            });
     };
 
     render(){
@@ -71,7 +60,7 @@ class LoginPage extends React.Component {
                         onChange={this.handleChanges}
                     ></input>
                     
-                    <button type="button" onClick={this.login}>Login</button>
+                    <button type="submit">Login</button>
                 </form>
             </div>
         );
