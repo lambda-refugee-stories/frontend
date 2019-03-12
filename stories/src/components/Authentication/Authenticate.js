@@ -3,12 +3,13 @@ import axios from 'axios';
 import SubmissionPage from '../StorySubmissions/SubmissionPage';
 import { Link } from 'react-router-dom';
 
-axios.defaults.baseURL = 'http://localhost:3000/';
-// baseURL is temporary while working on the code locally. will change to proper URL when the edits are complete
+axios.defaults.baseURL = 'https://refugee-stories-backend-rkolk.herokuapp.com/';
+
+const token = localStorage.getItem('jwt');
 
 axios.interceptors.request.use(
     function(options) {
-        options.headers.authorization = localStorage.getItem('jwt');
+        options.headers.authorization = token;
 
         return options;
     },
@@ -21,7 +22,6 @@ axios.interceptors.request.use(
 
 export default class Authenticate extends React.Component {
         render() {
-            const token = localStorage.getItem('jwt');
             const notLoggedIn = <div>Please <Link to="/login">log in</Link> to access story submissions.</div>;
 
             return <> {token ? <SubmissionPage {...this.props} /> : notLoggedIn} </>;
