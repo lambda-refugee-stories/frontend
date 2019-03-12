@@ -3,8 +3,7 @@ import axios from 'axios';
 import SubmissionPage from '../StorySubmissions/SubmissionPage';
 import { Link } from 'react-router-dom';
 
-axios.defaults.baseURL = 'http://localhost:3000/';
-// baseURL is temporary while working on the code locally. will change to proper URL when the edits are complete
+axios.defaults.baseURL = 'https://refugee-stories-backend-rkolk.herokuapp.com/';
 
 axios.interceptors.request.use(
     function(options) {
