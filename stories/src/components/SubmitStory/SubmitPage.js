@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import SubmitForm from './SubmitForm';
 
-class SignUpPage extends React.Component {
+class SubmitPage extends React.Component {
     constructor(){
         super();
         this.state={
@@ -32,6 +32,7 @@ class SignUpPage extends React.Component {
 
             .then(response => {
                 console.log(response);
+                alert('Thank you for your submission.')
             })
 
             .catch(err => {
@@ -54,4 +55,4 @@ class SignUpPage extends React.Component {
     }
 }
 
-export default SignUpPage;
+export default SubmitPage;
