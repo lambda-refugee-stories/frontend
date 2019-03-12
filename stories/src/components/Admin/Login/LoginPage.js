@@ -1,51 +1,42 @@
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 class LoginPage extends React.Component {
     constructor(){
         super();
         this.state = {
-            username: '',
-            password: '',
+            credentials: {
+                username: '',
+                password: '',
+            },
             error: '',
         }
     }
 
-    componentDidMount() {
-        // axios
-        //     .get('https://refugee-stories-backend-rkolk.herokuapp.com/login')
-        
-        //     .then(response => {
-        //         console.log(response)
-        //         this.setState({
-        //             username: user,
-        //             password: pw,
-        //     })
-        
-        //     .catch(err => {
-        //         console.log(err)
-        //         this.setState({ error: err })
-        //     });
-        }
-    
     handleChanges = event => {
         this.setState({
-            [event.target.name]: event.target.value
+            credentials: {
+                ...this.state.credentials,
+                [event.target.name]: event.target.value
+            }
         });
     };
 
     login = (event) => {
-        const user = this.state.username;
-        const pw = this.state.password;
+        event.preventDefault();
 
-        if(user.length !== 0 || pw.length !==0){
-            this.props.history.push('/submissions');
-        }
-        
-        else{
-            event.preventDefault();
-            alert("All fields are required.");
-        }
+        axios
+            .post('https://refugee-stories-backend-rkolk.herokuapp.com/login', this.state.credentials)
+
+            .then(response => {
+                console.log(response)
+                this.props.history.push('/submissions');
+            })
+
+            .catch(err => {
+                console.log(err)
+                this.setState({ error: err })
+            });
     };
 
     render(){
@@ -69,7 +60,7 @@ class LoginPage extends React.Component {
                         onChange={this.handleChanges}
                     ></input>
                     
-                    <button onClick={this.login}>Login</button>
+                    <button type="submit">Login</button>
                 </form>
             </div>
         );
