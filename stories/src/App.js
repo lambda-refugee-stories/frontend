@@ -4,18 +4,27 @@ import NavBar from './components/NavBar/NavBar';
 import StoryList from './components/StoriesPage/StoryList';
 import LoginPage from './components/Admin/Login/LoginPage';
 import SignUpPage from './components/Admin/SignUp/SignUpPage';
-import SubmissionPage from './components/StorySubmissions/SubmissionPage';
+import Authenticate from './components/Authentication/Authenticate';
+import SubmitPage from './components/SubmitStory/SubmitPage';
 import './App.css';
 
 class App extends Component {
+  logout(){
+    localStorage.removeItem('jwt');
+    this.props.history.push('/');
+  }
+
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar
+          logout={this.logout}
+        />
         <Route exact path="/" component={StoryList}/>
         <Route path="/login" component={LoginPage}/>
-        <Route path="/submissions" component={SubmissionPage}/>
+        <Route path="/submissions" component={Authenticate}/>
         <Route path="/signup" component={SignUpPage}/>
+        <Route path="/submit" component={SubmitPage} />
       </div>
     );
   }
