@@ -1,5 +1,5 @@
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 class SignUpPage extends React.Component {
     constructor(){
@@ -43,24 +43,18 @@ class SignUpPage extends React.Component {
         if(user.length !== 0 || pw.length !==0){
             event.preventDefault();
 
-            // axios
-            //     .post('https://refugee-stories-backend-rkolk.herokuapp.com/signup', element)
+            axios
+                .post('https://refugee-stories-backend-rkolk.herokuapp.com/signup', element)
 
-            //     .then(response => {
-            //         console.log(response)
-            //         this.setState({
-            //             username: user,
-            //             password: pw,
-            //             admin: true
-            //         })
-            //     })
+                .then(response => {
+                    console.log(response);
+                    this.props.history.push('/submissions');
+                })
 
-            //     .catch(err => {
-            //         console.log(err)
-            //         this.setState({ error: err })
-            //     });
-
-            this.props.history.push('/login');
+                .catch(err => {
+                    console.log(err);
+                    this.setState({ error: err });
+                });
         }
         
         else{
