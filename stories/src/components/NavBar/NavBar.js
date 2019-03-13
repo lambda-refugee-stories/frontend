@@ -5,10 +5,11 @@ const token = localStorage.getItem('jwt');
 
 const NavBar = props => {
     return (
-        <div>
-            <div className="App">
-                <h1>Refugee Stories</h1>
-                
+        <div className="navbar-container">
+            <h1>Refugee Stories</h1>
+            <div className="link-container">
+
+
                 <div>
                     <a href="https://mystifying-jennings-1ac73b.netlify.com/">Home</a>
                 </div>
@@ -17,19 +18,19 @@ const NavBar = props => {
                     <Link to="/">Stories</Link>
                 </div>
 
-                <div style={token ? {display: 'none'} : null}>
+                <div style={token ? { display: 'none' } : null}>
                     <Link to="/submit">Submit Your Story</Link>
                 </div>
 
-                <div style={token ? {display: 'none'} : null}>
+                <div style={token ? { display: 'none' } : null}>
                     Admin Only: <Link to="/login">Log In</Link>
                 </div>
 
-                <div style={token ? null : {display: 'none'}}>
+                <div style={token ? null : { display: 'none' }}>
                     <Link to="/submissions">Submissions</Link>
                 </div>
 
-                <div style={token ? null : {display: 'none'}}>
+                <div style={token ? null : { display: 'none' }}>
                     <Link to="/" onClick={props.logout}>Log Out</Link>
                 </div>
             </div>
