@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import EachSubmission from './EachSubmission';
+import { Link } from 'react-router-dom';
+import Story from '../Story/Story';
 
 
 
-export default class SubmissionPage extends Component {
+export default class StoryList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,7 +15,7 @@ export default class SubmissionPage extends Component {
     
     componentDidMount() {
         axios
-        .get('https://refugee-stories-backend-rkolk.herokuapp.com/submissions')
+        .get('https://refugee-stories-backend-rkolk.herokuapp.com/stories')
         .then(res => this.setState({ stories: res.data }))
         .catch(err => console.error(err));
     }
@@ -26,14 +27,12 @@ export default class SubmissionPage extends Component {
             <div className='story-list-container'>
             <h2>Story List</h2>
             {this.state.stories.map(story => {
-                if (!story.isapproved) {
+                if (story.isapproved) {
                     return (
-                        <EachSubmission key={story.id} story={story}/>
+                        <Story key={story.id} story={story}/>
                     )
-                }
-                
-                else return null;
-            })}
+            }})}
+
 
             </div>
         )

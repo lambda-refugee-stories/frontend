@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Collapse } from 'reactstrap';
 
-class EachSubmission extends React.Component {
+class Story extends React.Component {
     constructor(props) {
         super(props);
         this.toggleCollapse = this.toggleCollapse.bind(this);
@@ -27,7 +27,7 @@ class EachSubmission extends React.Component {
                 
                     <div className='story-header'>
                         <div className='author-img-container'>
-                            <img className='author-img' src={this.props.story.imageurl} alt='Author' />
+                            <img className='author-img' src={this.props.story.imageurl} alt='Author Image' />
                         </div>
                         <h4>{this.props.story.title}</h4>
                         <h6>By: {this.props.story.name}</h6>
@@ -45,4 +45,4 @@ class EachSubmission extends React.Component {
     }
 }
 
-export default EachSubmission;
+export default Story;

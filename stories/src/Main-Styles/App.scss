@@ -1,0 +1,20 @@
+//Import Reset
+@import './Reset.scss';
+//Import BorderBox/62.5% Font Size
+@import './Sizing.scss';
+//Import Variables
+@import './Variables.scss';
+//Not using mixins for now
+
+//Import Each Component's scss File Here
+@import '../components/Admin/Login/loginpage';
+@import '../components/Admin/SignUp/signuppage';
+@import '../components/NavBar/navbar';
+@import '../components/Authentication/authenticate';
+@import '../components/NavBar/navbar';
+@import '../components/StoriesPage/StoryList/storylist';
+@import '../components/StoriesPage/Story/story';
+@import '../components/StorySubmissions/submissionpage';
+@import '../components/StorySubmissions/eachsubmission';
+@import '../components/SubmitStory/submitPage';
+@import '../components/SubmitStory/submitForm';

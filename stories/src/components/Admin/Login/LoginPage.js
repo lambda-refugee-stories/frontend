@@ -30,6 +30,8 @@ class LoginPage extends React.Component {
 
             .then(response => {
                 console.log(response)
+                localStorage.setItem('jwt', response.data.token)
+                window.location.reload();
                 this.props.history.push('/submissions');
             })
 
