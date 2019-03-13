@@ -1,0 +1,29 @@
+@import '../../Main-Styles/Variables.scss';
+
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    height: 100px;
+
+
+    h1 {
+        font-size: $main-header-size;
+    }
+
+    .link-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0px 10px;
+        height: 25%;
+
+        div {
+            font-size: $misc-text-size;
+        }
+    }
+
+}
+
