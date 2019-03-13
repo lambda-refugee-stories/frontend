@@ -22,9 +22,9 @@ class Story extends React.Component {
             this.setState(state => ({
                 buttonText: 'Close This Story'
             }))
-            
+
         } else {
-            this.setState(state => ({ 
+            this.setState(state => ({
                 buttonText: 'Read This Story'
             }))
         }
@@ -45,12 +45,25 @@ class Story extends React.Component {
                         <h6>By: {this.props.story.name}</h6>
                     </div>
                 </div>
-                <Collapse isOpen={this.state.collapse}>
-                    <div className='story-content'>
-                        <p>{this.props.story.story}</p>
-                    </div>
+                <Modal className="story-container" isOpen={this.state.collapse}>
 
-                </Collapse>
+                    
+                        <div className='story-header'>
+                            <div className='author-img-container'>
+                                <img className='author-img' src={this.props.story.imageurl} alt='Author Image' />
+                            </div>
+                            <div className="header-text-content">
+                                <h4>{this.props.story.title}</h4>
+                                <h6>By: {this.props.story.name}</h6>
+                            </div>
+                        </div>
+
+
+                        <div className='story-content'>
+                            <p>{this.props.story.story}</p>
+                        </div>
+                        <button onClick={this.toggleCollapse}>{this.state.buttonText}</button>
+                </Modal>
 
 
                 <button onClick={this.toggleCollapse}>{this.state.buttonText}</button>

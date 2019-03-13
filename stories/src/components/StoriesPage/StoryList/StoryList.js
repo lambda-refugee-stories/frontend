@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Story from '../Story/Story';
 
-
-
 export default class StoryList extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +24,7 @@ export default class StoryList extends Component {
         return (
             <div className='story-list-container'>
             <h2>Story List</h2>
-            {this.state.stories.map(story => {
+            {this.state.stories.reverse().map(story => {
                 if (story.isapproved) {
                     return (
                         <Story key={story.id} story={story}/>
