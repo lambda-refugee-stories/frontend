@@ -1,15 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import SubmissionPage from '../StorySubmissions/SubmissionPage';
 import { Link } from 'react-router-dom';
 
 axios.defaults.baseURL = 'https://refugee-stories-backend-rkolk.herokuapp.com/';
 
-const token = localStorage.getItem('jwt');
+
 
 axios.interceptors.request.use(
     function(options) {
-        options.headers.authorization = token;
+        options.headers.authorization = localStorage.getItem('jwt');
 
         return options;
     },
@@ -20,10 +19,13 @@ axios.interceptors.request.use(
     }
 );
 
-export default class Authenticate extends React.Component {
+export default function(Component) {
+    return class Authenticate extends React.Component {
         render() {
+            const token = localStorage.getItem('jwt');
             const notLoggedIn = <div>Please <Link to="/login">log in</Link> to access story submissions.</div>;
 
-            return <> {token ? <SubmissionPage {...this.props} /> : notLoggedIn} </>;
+            return <> {token ? <Component {...this.props} /> : notLoggedIn} </>;
         }
     };
+}
