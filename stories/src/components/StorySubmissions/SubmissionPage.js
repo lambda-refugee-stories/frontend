@@ -1,40 +1,67 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import EachSubmission from './EachSubmission';
+import authenticate from '../Authentication/Authenticate';
 
 
 
-export default class SubmissionPage extends Component {
+class SubmissionPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            stories: []
+            submissions: []
         };
     }
     
     componentDidMount() {
         axios
         .get('https://refugee-stories-backend-rkolk.herokuapp.com/submissions')
-        .then(res => this.setState({ stories: res.data }))
+        .then(res => this.setState({ submissions: res.data }))
         .catch(err => console.error(err));
     }
 
-    updateStory = event => {
+    updateStory = (event, element) => {
         event.preventDefault();
-        console.log('update connect success!')
+        console.log(this.state.submissions);
+        console.log(element);
+        axios
+            .put(`https://refugee-stories-backend-rkolk.herokuapp.com/submissions/${element.id}`, element)
+
+            .then(response => {
+                console.log(response);
+                this.setState({
+                    
+                })
+                window.location.reload();
+            })
+
+            .catch(err => {
+                console.log(err);
+            });
     }
 
-    deleteStory = event => {
+    deleteStory = (event, element) => {
         event.preventDefault();
-        console.log('delete connect success!')
+
+        axios
+            .delete(`https://refugee-stories-backend-rkolk.herokuapp.com/submissions/${element.id}`)
+        
+            .then(response => {
+                console.log(response);
+                window.location.reload();
+            })
+        
+            .catch(err => {
+                console.log(err);
+            });
     }
 
     render() {
         
         return (
             <div className='story-list-container'>
-            <h2>Story List</h2>
-            {this.state.stories.map(story => {
+            <h2>Submissions</h2>
+            {this.state.submissions.map(story => {
                 if (!story.isapproved) {
                     return (
                         <EachSubmission
@@ -53,3 +80,5 @@ export default class SubmissionPage extends Component {
         )
     }
 }
+
+export default authenticate(SubmissionPage);
