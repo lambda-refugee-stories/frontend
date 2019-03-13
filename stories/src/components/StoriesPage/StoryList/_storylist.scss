@@ -1,0 +1,11 @@
+@import '../../../Main-Styles/Variables.scss';
+
+.story-list-container {
+    width: 100%;
+    margin: 0 auto;
+
+    h2 {
+        font-size: $main-header-size;
+        //color: $main-header-color;
+    }
+}

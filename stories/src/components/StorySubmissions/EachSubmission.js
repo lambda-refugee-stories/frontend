@@ -1,48 +1,25 @@
 import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Collapse } from 'reactstrap';
 
-class EachSubmission extends React.Component {
-    constructor(props) {
-        super(props);
-        this.toggleCollapse = this.toggleCollapse.bind(this);
-        this.state = {
-            story: props.story,
-            collapse: false
-        }
-    }
+const EachSubmission = props => {
+    return (
+        <div className='story-container'>
+            <div className='story-header'>
+                <div className='author-img-container'>
+                    <img className='author-img' src={props.story.imageurl} alt='Author' />
+                </div>
+                <h4>{props.story.title}</h4>
+                <h6>By: {props.story.name}</h6>
+                <p>{props.story.story}</p>
+            </div>
 
-    toggleCollapse() {
-        this.setState(state => ({
-            collapse: !state.collapse
-        }))
-    }
-
-
-
-    render() {
-        return (
-            <div className='story-container'>
-                
-                    <div className='story-header'>
-                        <div className='author-img-container'>
-                            <img className='author-img' src={this.props.story.imageurl} alt='Author' />
-                        </div>
-                        <h4>{this.props.story.title}</h4>
-                        <h6>By: {this.props.story.name}</h6>
-                        <Collapse isOpen={this.state.collapse}>
-                        <div className='story-content'>
-                            <p>{this.props.story.story}</p>
-                            
-                        </div>
-                        </Collapse>
-                    </div>
-                    
-                    <a onClick={this.toggleCollapse}>Read This Story</a>
-            </div >
-        )
-    }
+            <div className='approval'>
+                <i className="far fa-check-circle" onClick={event => props.updateStory(event, props.story)}></i>
+                <i className="far fa-times-circle" onClick={event => props.deleteStory(event, props.story)}></i>
+            </div>
+        </div >
+    )
 }
 
 export default EachSubmission;
