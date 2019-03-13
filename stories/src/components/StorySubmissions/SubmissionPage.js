@@ -19,6 +19,15 @@ export default class SubmissionPage extends Component {
         .catch(err => console.error(err));
     }
 
+    updateStory = event => {
+        event.preventDefault();
+        console.log('update connect success!')
+    }
+
+    deleteStory = event => {
+        event.preventDefault();
+        console.log('delete connect success!')
+    }
 
     render() {
         
@@ -28,7 +37,12 @@ export default class SubmissionPage extends Component {
             {this.state.stories.map(story => {
                 if (!story.isapproved) {
                     return (
-                        <EachSubmission key={story.id} story={story}/>
+                        <EachSubmission
+                            key={story.id}
+                            story={story}
+                            updateStory={this.updateStory}
+                            deleteStory={this.deleteStory}
+                        />
                     )
                 }
                 
