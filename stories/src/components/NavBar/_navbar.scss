@@ -5,7 +5,7 @@
     justify-content: center;
     flex-wrap: wrap;
     padding-top: 10px;
-    height: 100px;
+    
 
 
     h1 {
@@ -20,10 +20,32 @@
         padding: 0px 10px;
         height: 25%;
 
+        @media screen and (max-width: 800px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         div {
             font-size: $misc-text-size;
+
+            @media screen and (max-width: 800px) {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                border-top: 1px solid gray;
+                font-size: 1.8rem;
+
+                &:hover {
+                    font-weight: bold;
+                }
+            }
         }
     }
+
+    @media screen and (max-width: 800px) {
+
+    }
+
 
 }
 
