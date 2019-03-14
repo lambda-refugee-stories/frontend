@@ -1,0 +1,37 @@
+.login-page{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 20px;
+
+    h1{
+        font-family: $prata;
+        font-size: $main-header-size;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $deep-red;
+    }
+
+    .login-form{
+        margin: 20px;
+        display: flex;
+        flex-flow: column nowrap;
+
+        .login-input{
+            text-align: center;
+            margin-bottom: 20px;
+            outline: none;
+            border-radius: 10px;
+            background: whitesmoke;
+            font-size: $sub-header-size;
+        }
+
+        button{
+            outline: none;
+            width: 75%;
+            margin: auto;
+            border-radius: 20px;
+            background: none;
+            font-size: $sub-header-size;
+        }
+    }
+}

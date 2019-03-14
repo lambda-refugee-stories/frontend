@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Collapse, Modal } from 'reactstrap';
+import { Collapse, } from 'reactstrap';
 
 class Story extends React.Component {
     constructor(props) {
@@ -39,7 +39,7 @@ class Story extends React.Component {
                 <div className='story-header'>
                     <div className="left-header">
                         <div className='author-img-container'>
-                            <img className='author-img' src={this.props.story.imageurl} alt='Author Image' />
+                            <img className='author-img' src={this.props.story.imageurl} alt='Author' />
                         </div>
                     </div>
                     <div className="right-header">
