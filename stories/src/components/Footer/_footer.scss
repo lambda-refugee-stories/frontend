@@ -1,0 +1,17 @@
+@import '../../Main-Styles/Variables.scss';
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    background-color: black;
+    
+
+    h4 {
+        color: $mustard;
+        font-size: $body-text-size;
+        font-family: $ubuntu;
+    }
+}
