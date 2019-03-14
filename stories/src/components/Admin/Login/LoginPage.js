@@ -43,10 +43,16 @@ class LoginPage extends React.Component {
 
     render(){
         return(
-            <div>
-                <h1>Login</h1>
-                <form onSubmit={this.login} autoComplete="off">
+            <div className="login-page">
+                <h1>Administrator Login</h1>
+                <form className="login-form"
+                    onFocus={event=> event.target.placeholder=""}
+                    onBlur={event=> event.target.placeholder=event.target.name}
+                    onSubmit={this.login}
+                    autoComplete="off"
+                >
                     <input
+                        className="login-input"
                         placeholder="username"
                         type="text"
                         name="username"
@@ -55,6 +61,7 @@ class LoginPage extends React.Component {
                     ></input>
 
                     <input
+                        className="login-input"
                         placeholder="password"
                         type="password"
                         name="password"
