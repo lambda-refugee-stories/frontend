@@ -36,7 +36,7 @@ class Story extends React.Component {
         return (
             <div className='story-container'>
 
-                <div className='story-header'>
+                <div className='story-header-img-right'>
                     <div className="right-header">
                         <div className="header-text-content">
                             <h4>{this.props.story.title}</h4>
