@@ -10,7 +10,7 @@ import {
 const items = [
   {
     id: 1,
-    imgUrl: 'https://i.imgur.com/kMT9xpn.jpg',
+    imgUrl: 'https://images.pexels.com/photos/259269/pexels-photo-259269.jpeg?cs=srgb&dl=black-and-white-boy-child-259269.jpg&fm=jpg',
     altText: 'Slide 1',
     caption: 'Where Your Story is OUR Story',
     header: 'Welcome to Our Stories Page'
