@@ -19,15 +19,15 @@ const items = [
     id: 2,
     imgUrl: 'https://images.pexels.com/photos/735446/pexels-photo-735446.jpeg?cs=srgb&dl=administration-adult-aged-735446.jpg&fm=jpg',
     altText: 'Slide 2',
-    caption: 'Slide 2',
+    caption: 'Share Your Story',
     header: ''
   },
   {
     id: 3,
     imgUrl: 'https://images.pexels.com/photos/1739842/pexels-photo-1739842.jpeg?cs=srgb&dl=adorable-affection-boy-1739842.jpg&fm=jpg',
     altText: 'Slide 3',
-    caption: 'Slide 3',
-    header: 'HEADER'
+    caption: 'Learn From the Experience of Others',
+    header: ''
   }
 ];
 
