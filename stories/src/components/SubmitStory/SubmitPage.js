@@ -76,8 +76,8 @@ class SubmitPage extends React.Component {
                         Thank you for your submitting your story. An administrator will review your submission soon.
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary"><Link to='/'>View Stories</Link></Button>{' '}
-                        <Button color="secondary" onClick={this.toggleModal}>Submit Another Story</Button>
+                        <Button className="btn-primary"><Link to='/' className="btn-primary">View Stories</Link></Button>{' '}
+                        <Button className="submit-story-link" onClick={this.toggleModal}>Submit Another Story</Button>
                     </ModalFooter>
                 </Modal>
             </div>

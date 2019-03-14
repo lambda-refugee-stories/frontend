@@ -11,3 +11,36 @@
         border-bottom: 1px solid $deep-red;
     }
 }
+
+.modal-content{
+    padding: 20px;
+    
+    .modal-header, h5{
+        font-family: $rock-salt;
+        font-size: $main-header-size;
+    }
+    .modal-body{
+        font-family: $ubuntu;
+        font-size: $sub-header-size;
+        padding: 20px 0;
+    }
+
+    .modal-footer{
+        .btn-primary{
+            background: firebrick;
+            border: 1px solid firebrick;
+            color: white;
+            text-decoration: none;
+
+
+            &:hover{
+                background: $deep-red;
+            }
+            .submit-story-link{
+                text-decoration: none;
+                color: white;
+                font-size: $sub-header-size;
+            }
+        }
+    }
+}
