@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Story from '../Story/Story';
+import StoryCarousel from '../../Carousel/Carousel';
 
 export default class StoryList extends Component {
     constructor(props) {
@@ -24,6 +25,7 @@ export default class StoryList extends Component {
         return (
             <div className='story-list-container'>
             <h2>Story List</h2>
+            <StoryCarousel />
             {this.state.stories.reverse().map(story => {
                 if (story.isapproved) {
                     return (
