@@ -9,9 +9,14 @@ html {
     font-size: 62.5%;
 }
 
-.App {
+.App-wrapper{
     width: 100%;
+    background: $off-white;
+}
+
+.App {
+    width: 95%;
     max-width: 1200px;
     margin: 0 auto;
-    
+    background: $white;
 }

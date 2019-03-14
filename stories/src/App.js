@@ -19,15 +19,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App-wrapper">
         <NavBar
           logout={this.logout}
         />
-        <Route exact path="/" component={StoryList}/>
-        <Route path="/login" component={LoginPage}/>
-        <Route path="/submissions" component={SubmissionPage}/>
-        <Route path="/signup" component={SignUpPage}/>
-        <Route path="/submit" component={SubmitPage} />
+        
+        <div className="App">
+          <Route exact path="/" component={StoryList}/>
+          <Route path="/login" component={LoginPage}/>
+          <Route path="/submissions" component={SubmissionPage}/>
+          <Route path="/signup" component={SignUpPage}/>
+          <Route path="/submit" component={SubmitPage} />
+        </div>
       </div>
     );
   }

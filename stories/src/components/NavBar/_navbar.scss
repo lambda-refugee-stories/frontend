@@ -1,32 +1,77 @@
 @import '../../Main-Styles/Variables.scss';
 
+.navbar-wrapper{
+    width: 100%;
+    background: $black;
+}
+
 .navbar-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
-    padding-top: 10px;
-    
-
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
 
     h1 {
         font-size: $main-header-size;
     }
 
+    .title{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            font-family: $rock-salt;
+            color: $white;
+            font-size: $main-header-size;
+            margin: 20px;
+        }
+
+        .logo-container{
+            width: 75px;
+            margin: 20px;
+    
+            img{
+                width: 100%;
+            }
+    
+            @media screen and (max-width: 800px){
+                max-width: 150px;
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 800px){
+            flex-flow: column nowrap;
+        }
+    }
+
+
     .link-container {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: space-between;
-        width: 100%;
+        width: 50%;
         padding: 0px 10px;
         height: 25%;
 
         @media screen and (max-width: 800px) {
             display: flex;
             flex-wrap: wrap;
+            width: 100%;
         }
 
         div {
-            font-size: $misc-text-size;
+            font-size: $body-text-size;
+
+            .nav-text{
+                text-decoration: none;
+                color: $mustard;
+            }
 
             @media screen and (max-width: 800px) {
                 width: 100%;
@@ -34,6 +79,7 @@
                 justify-content: center;
                 border-top: 1px solid gray;
                 font-size: 1.8rem;
+                padding: 10px;
 
                 &:hover {
                     font-weight: bold;
@@ -43,7 +89,7 @@
     }
 
     @media screen and (max-width: 800px) {
-
+        flex-direction: column;
     }
 
 
