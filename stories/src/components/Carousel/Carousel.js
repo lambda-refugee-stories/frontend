@@ -94,7 +94,7 @@ class StoryCarousel extends Component {
             `.custom-tag {
                 max-width: 100%;
                 height: 500px;
-                background: #CBA328;
+                background: black;
                 order: 5;
                 
               
