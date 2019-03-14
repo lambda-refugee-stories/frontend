@@ -113,7 +113,7 @@ class SignUpPage extends React.Component {
                         Thank you for your patience. Please feel free to view the published stories in the meantime.
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary"><Link to='/' className="signup-modal-link">View Stories</Link></Button>{' '}
+                        <Button color="primary"><Link to='/'>View Stories</Link></Button>{' '}
                     </ModalFooter>
                 </Modal>
             </div>
