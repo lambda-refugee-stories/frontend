@@ -15,7 +15,7 @@ class SubmitPage extends React.Component {
                 story: '',
             },
             error: '',
-            modal: true,
+            modal: false,
         };
 
         this.toggleModal = this.toggleModal.bind(this);
