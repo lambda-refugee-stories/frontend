@@ -62,7 +62,7 @@ class SubmitPage extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="submit-page">
                 <h1>Tell the World Your Story</h1>
                 <SubmitForm
                     submission={this.state.submission}

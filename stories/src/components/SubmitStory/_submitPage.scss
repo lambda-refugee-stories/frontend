@@ -1,0 +1,13 @@
+.submit-page{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 20px;
+
+    h1{
+        font-family: $prata;
+        font-size: $main-header-size;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $deep-red;
+    }
+}
