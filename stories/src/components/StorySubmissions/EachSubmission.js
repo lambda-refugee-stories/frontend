@@ -23,17 +23,17 @@ class EachSubmission extends React.Component {
 
     render() {
         return (
-            <div className='story-container'>
-                <div className='story-header'>
-                    <div className='author-img-container'>
-                        <img className='author-img' src={this.props.story.imageurl} alt='Author' style={{maxHeight: "200px"}} />
+            <div className='sub-container'>
+                <div className='sub-header'>
+                    <div className='sub-img-container'>
+                        <img className='sub-img' src={this.props.story.imageurl} alt='Author' style={{maxHeight: "200px"}} />
                     </div>
 
-                    <h4>{this.props.story.title}</h4>
+                    <h4 className='sub-title'>{this.props.story.title}</h4>
 
-                    <h6>By: {this.props.story.name}</h6>
+                    <h6 className='sub-name'>By: {this.props.story.name}</h6>
 
-                    <p>{this.props.story.story}</p>
+                    <p className='sub-story'>{this.props.story.story}</p>
                 </div>
 
                 <div className='approval'>

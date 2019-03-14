@@ -37,7 +37,7 @@ The following fonts and colors are approved for use in this project:
 ### Colors
 - ![#ffffff](https://placehold.it/15/ffffff/000000?text=+) `#ffffff`
 - ![#f9f7f1](https://placehold.it/15/f9f7f1/000000?text=+) `#f9f7f1`
-- ![#666666](https://placehold.it/15/666666/000000?text=+) `#666666`
 - ![#cba328](https://placehold.it/15/cba328/000000?text=+) `#cba328`
+- ![#666666](https://placehold.it/15/666666/000000?text=+) `#666666`
 - ![#93101d](https://placehold.it/15/93101d/000000?text=+) `#93101d`
 - ![#000000](https://placehold.it/15/000000/000000?text=+) `#000000`
