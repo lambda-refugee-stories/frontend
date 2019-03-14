@@ -5,13 +5,50 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 75px;
+    height: 100px;
     background-color: black;
+    flex-wrap: wrap;
     
+    .link-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 30px;
+       
+        
 
-    h4 {
-        color: $mustard;
-        font-size: $body-text-size;
-        font-family: $ubuntu;
+        div {
+            font-size: $body-text-size;
+
+            p{
+                color: $white;
+                font-family: $ubuntu;
+            }
+
+            .nav-text{
+                text-decoration: none;
+                font-family: $ubuntu;
+                color: $mustard;
+
+                &:hover{
+                    color: $off-white;
+                }
+            }
+
+        }
     }
+    .copyright{
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        h4 {
+            color: $mustard;
+            font-size: $body-text-size;
+            font-family: $ubuntu;
+        }
+    }
+
+
 }
