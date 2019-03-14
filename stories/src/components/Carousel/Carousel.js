@@ -12,12 +12,12 @@ const items = [
     id: 1,
     imgUrl: 'https://images.pexels.com/photos/259269/pexels-photo-259269.jpeg?cs=srgb&dl=black-and-white-boy-child-259269.jpg&fm=jpg',
     altText: 'Slide 1',
-    caption: 'Where Your Story is OUR Story',
-    header: 'Welcome to Our Stories Page'
+    caption: 'Where Our Story is YOUR Story',
+    header: 'Welcome to Our Stories Page:'
   },
   {
     id: 2,
-    imgURL: 'https://images.pexels.com/photos/735446/pexels-photo-735446.jpeg?cs=srgb&dl=administration-adult-aged-735446.jpg&fm=jpg',
+    imgUrl: 'https://images.pexels.com/photos/735446/pexels-photo-735446.jpeg?cs=srgb&dl=administration-adult-aged-735446.jpg&fm=jpg',
     altText: 'Slide 2',
     caption: 'Slide 2',
     header: 'HEADER'
@@ -80,7 +80,9 @@ class StoryCarousel extends Component {
           onExited={this.onExited}
         >
           <img  className="carousel-img" src={item.imgUrl} alt={item.altText} />
+          <div className="captions">
           <CarouselCaption className="text" captionText={item.caption} captionHeader={item.header} />
+          </div>
         </CarouselItem>
       );
     });
