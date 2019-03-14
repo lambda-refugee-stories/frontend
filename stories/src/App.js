@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import './Main-Styles/App.scss';
 
 import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 import StoryList from './components/StoriesPage/StoryList/StoryList';
 import LoginPage from './components/Admin/Login/LoginPage';
 import SignUpPage from './components/Admin/SignUp/SignUpPage';
@@ -19,15 +20,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App-wrapper">
         <NavBar
           logout={this.logout}
         />
-        <Route exact path="/" component={StoryList}/>
-        <Route path="/login" component={LoginPage}/>
-        <Route path="/submissions" component={SubmissionPage}/>
-        <Route path="/signup" component={SignUpPage}/>
-        <Route path="/submit" component={SubmitPage} />
+        
+        <div className="App">
+          <Route exact path="/" component={StoryList}/>
+          <Route path="/login" component={LoginPage}/>
+          <Route path="/submissions" component={SubmissionPage}/>
+          <Route path="/signup" component={SignUpPage}/>
+          <Route path="/submit" component={SubmitPage} />
+        </div>
+        
+        <Footer />
       </div>
     );
   }
