@@ -106,14 +106,20 @@ class SignUpPage extends React.Component {
 
                 <Modal isOpen={this.state.modal} toggle={this.toggleModal} className={this.props.className}>
                     <ModalHeader>Congratulations!</ModalHeader>
+
                     <ModalBody>
                         Congratulations on signing up for Refugee Stories. You are now signed up and logged in.
                         For now, you will not be able to see the submissions on the submissions page.
                         If approved, an administator will give you the rights to view and edit submissions.
                         Thank you for your patience. Please feel free to view the published stories in the meantime.
                     </ModalBody>
+
                     <ModalFooter>
-                        <Button color="primary"><Link to='/'>View Stories</Link></Button>{' '}
+                        <Link to='/'>
+                            <Button className="btn-primary">
+                                <span className="signup-modal-link">View Stories</span>
+                            </Button>{' '}
+                        </Link>
                     </ModalFooter>
                 </Modal>
             </div>

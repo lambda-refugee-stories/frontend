@@ -29,9 +29,7 @@
         .btn-primary{
             background: firebrick;
             border: 1px solid firebrick;
-            color: white;
-            text-decoration: none;
-
+            font-family: $ubuntu;
 
             &:hover{
                 background: $deep-red;
@@ -41,6 +39,13 @@
                 color: white;
                 font-size: $sub-header-size;
             }
+        }
+
+        .submit-story-text{
+            color: white;
+            font-size: $sub-header-size;
+            font-family: $ubuntu;
+            margin: none;
         }
     }
 }

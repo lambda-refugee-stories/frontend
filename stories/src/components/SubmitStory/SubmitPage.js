@@ -72,12 +72,21 @@ class SubmitPage extends React.Component {
 
                 <Modal isOpen={this.state.modal} toggle={this.toggleModal} className={this.props.className}>
                     <ModalHeader>Thank You!</ModalHeader>
+
                     <ModalBody>
                         Thank you for your submitting your story. An administrator will review your submission soon.
                     </ModalBody>
+
                     <ModalFooter>
-                        <Button className="btn-primary"><Link to='/' className="btn-primary">View Stories</Link></Button>{' '}
-                        <Button className="submit-story-link" onClick={this.toggleModal}>Submit Another Story</Button>
+                        <Link to='/'>
+                            <Button className="btn-primary">
+                                <span className="submit-story-link">View Stories</span>
+                            </Button>{' '}
+                        </Link>
+
+                        <Button className="btn" onClick={this.toggleModal}>
+                            <span className="submit-story-text">Submit Another Story</span>
+                        </Button>
                     </ModalFooter>
                 </Modal>
             </div>
