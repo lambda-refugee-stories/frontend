@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import SubmitForm from './SubmitForm';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class SubmitPage extends React.Component {
     constructor(){
@@ -13,7 +15,10 @@ class SubmitPage extends React.Component {
                 story: '',
             },
             error: '',
-        }
+            modal: true,
+        };
+
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
     handleChanges = event => {
@@ -25,6 +30,12 @@ class SubmitPage extends React.Component {
         });
     };
 
+    toggleModal() {
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
+
     submitStory = (event) => {
         event.preventDefault();
         axios
@@ -32,7 +43,15 @@ class SubmitPage extends React.Component {
 
             .then(response => {
                 console.log(response);
-                alert('Thank you for your submission.')
+                this.toggleModal();
+                this.setState({
+                    submission: {
+                        name: '',
+                        title: '',
+                        imageurl: '',
+                        story: '',
+                    }
+                })
             })
 
             .catch(err => {
@@ -50,7 +69,19 @@ class SubmitPage extends React.Component {
                     handleChanges={this.handleChanges}
                     submitStory={this.submitStory}
                 />
+
+                <Modal isOpen={this.state.modal} toggle={this.toggleModal} className={this.props.className}>
+                    <ModalHeader>Thank You!</ModalHeader>
+                    <ModalBody>
+                        Thank you for your submitting your story. An administrator will review your submission soon.
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button color="primary"><Link to='/'>View Stories</Link></Button>{' '}
+                        <Button color="secondary" onClick={this.toggleModal}>Submit Another Story</Button>
+                    </ModalFooter>
+                </Modal>
             </div>
+
         );
     }
 }
