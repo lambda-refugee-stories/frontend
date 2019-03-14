@@ -9,9 +9,15 @@ html {
     font-size: 62.5%;
 }
 
+.App-wrapper{
+    width: 100%;
+    background: $off-white;
+}
+
 .App {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    
+    padding: 10px;
+    margin: auto;
+    background: $white;
 }
