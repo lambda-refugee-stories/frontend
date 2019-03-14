@@ -26,4 +26,8 @@ html {
     margin: auto;
     background: $white;
     font-family: $ubuntu;
+
+    @media screen and (max-width: 800px){
+        min-height: 0;
+    }
 }

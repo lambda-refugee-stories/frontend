@@ -23,8 +23,10 @@
         flex-flow: row wrap;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
 
         h1{
+            text-decoration: none;
             font-family: $rock-salt;
             color: $white;
             font-size: $main-header-size;
@@ -43,6 +45,10 @@
                 max-width: 150px;
                 width: 80%;
             }
+        }
+        &:hover{
+            text-decoration: underline;
+            text-decoration-color: $deep-red;
         }
 
         @media screen and (max-width: 800px){
@@ -68,10 +74,19 @@
         div {
             font-size: $body-text-size;
 
+            p{
+                color: $white;
+                font-family: $ubuntu;
+            }
+
             .nav-text{
                 text-decoration: none;
                 font-family: $ubuntu;
                 color: $mustard;
+
+                &:hover{
+                    color: $off-white;
+                }
             }
 
             @media screen and (max-width: 800px) {
