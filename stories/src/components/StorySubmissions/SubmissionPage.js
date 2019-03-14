@@ -56,8 +56,8 @@ class SubmissionPage extends Component {
         const sorted = this.state.submissions.sort(function (a, b) {return a.id - b.id;});
 
         return (
-            <div className='story-list-container'>
-                <h2>Current Submissions</h2>
+            <div className='sub-page-container'>
+                <h2 className='sub-page-header'>Current Submissions</h2>
 
                 {sorted.map(story => {
                     if (!story.isapproved) {
@@ -74,7 +74,7 @@ class SubmissionPage extends Component {
                     else return null;
                 })}
 
-                <h2>Approved Submissions</h2>
+                <h2 className='sub-page-header'>Approved Submissions</h2>
 
                 {sorted.reverse().map(story => {
                     if (story.isapproved) {
