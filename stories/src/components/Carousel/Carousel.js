@@ -20,7 +20,7 @@ const items = [
     imgUrl: 'https://images.pexels.com/photos/735446/pexels-photo-735446.jpeg?cs=srgb&dl=administration-adult-aged-735446.jpg&fm=jpg',
     altText: 'Slide 2',
     caption: 'Slide 2',
-    header: 'HEADER'
+    header: ''
   },
   {
     id: 3,
