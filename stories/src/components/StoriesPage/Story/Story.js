@@ -37,20 +37,30 @@ class Story extends React.Component {
             <div className='story-container'>
 
                 <div className='story-header'>
-                    <div className='author-img-container'>
-                        <img className='author-img' src={this.props.story.imageurl} alt='Author Image' />
+                    <div className="left-header">
+                        <div className='author-img-container'>
+                            <img className='author-img' src={this.props.story.imageurl} alt='Author Image' />
+                        </div>
                     </div>
-                    <div className="header-text-content">
-                        <h4>{this.props.story.title}</h4>
-                        <h6>By: {this.props.story.name}</h6>
+                    <div className="right-header">
+                        <div className="header-text-content">
+                            <h4>{this.props.story.title}</h4>
+                            <h6>Submitted By: {this.props.story.name}</h6>
+                        </div>
                     </div>
                 </div>
                 <Collapse isOpen={this.state.collapse}>
                     <div className='story-content'>
+                        <p><strong>{this.props.story.title}</strong></p>
+                        <br />
                         <p>{this.props.story.story}</p>
+                        <br />
+                        <p>-{this.props.story.name}</p>
                     </div>
                 </Collapse>
-                <button onClick={this.toggleCollapse}>{this.state.buttonText}</button>
+                <div className="under-collapse">
+                    <button onClick={this.toggleCollapse}>{this.state.buttonText}</button>
+                </div>
             </div >
         )
     }

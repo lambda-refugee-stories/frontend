@@ -88,7 +88,7 @@ class StoryCarousel extends Component {
     });
 
     return (
-      <div>
+      <div className="carousel-container">
         <style>
           {
             `.custom-tag {
@@ -97,6 +97,7 @@ class StoryCarousel extends Component {
                 background: #CBA328;
                 order: 5;
                 
+              
               }`
           }
         </style>
