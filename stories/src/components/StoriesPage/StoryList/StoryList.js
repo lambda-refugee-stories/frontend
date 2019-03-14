@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import Story from '../Story/Story';
+import StoryImgRight from '../StoryImgRight/StoryImgRight';
 import StoryCarousel from '../../Carousel/Carousel';
 
 export default class StoryList extends Component {
@@ -24,14 +24,20 @@ export default class StoryList extends Component {
         
         return (
             <div className='story-list-container'>
-            <h2>Story List</h2>
             <StoryCarousel />
-            {this.state.stories.reverse().map(story => {
-                if (story.isapproved) {
+            {this.state.stories.reverse().map((story, index) => {
+                if (story.isapproved && index % 2 === 0) {
                     return (
                         <Story key={story.id} story={story}/>
                     )
-            }})}
+                }
+                else if (story.isapproved && index % 2 !== 0) {
+                    return (
+                        <StoryImgRight key={story.id} story={story} />
+                    )
+                } 
+                else return null
+            })}
 
 
             </div>

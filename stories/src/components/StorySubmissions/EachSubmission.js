@@ -28,33 +28,36 @@ class EachSubmission extends React.Component {
                     <div className='sub-img-container'>
                         <img className='sub-img' src={this.props.story.imageurl} alt='Author' style={{maxHeight: "200px"}} />
                     </div>
-                    <div classNAme='sub-details'>
+
+                    <div className='sub-details'>
                         <h4 className='sub-title'>{this.props.story.title}</h4>
 
                         <h6 className='sub-name'>By: {this.props.story.name}</h6>
 
                         <p className='sub-story'>{this.props.story.story}</p>
+
+                        <div className='approval'>
+                            <i
+                                className="fas fa-check icon"
+                                onClick={this.toggleApproved}
+                                style={this.state.story.isapproved ? { display: 'none' } : null}
+                            ></i>
+
+                            <i
+                                className="fas fa-undo icon"
+                                onClick={this.toggleApproved} 
+                                style={this.state.story.isapproved ? null : { display: 'none' }}
+                            ></i>
+
+                            <i
+                                className="far fa-trash-alt icon"
+                                onClick={event => this.props.deleteStory(event, this.props.story)}
+                            ></i>
+                        </div>
                     </div>
                 </div>
 
-                <div className='approval'>
-                    <i
-                        className="fas fa-check"
-                        onClick={this.toggleApproved}
-                        style={this.state.story.isapproved ? { display: 'none' } : null}
-                    ></i>
 
-                    <i
-                        className="fas fa-undo"
-                        onClick={this.toggleApproved} 
-                        style={this.state.story.isapproved ? null : { display: 'none' }}
-                    ></i>
-
-                    <i
-                        className="far fa-trash-alt"
-                        onClick={event => this.props.deleteStory(event, this.props.story)}
-                    ></i>
-                </div>
             </div >
         )
     }

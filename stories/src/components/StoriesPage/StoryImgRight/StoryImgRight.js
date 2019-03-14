@@ -37,15 +37,15 @@ class Story extends React.Component {
             <div className='story-container'>
 
                 <div className='story-header'>
-                    <div className="left-header">
-                        <div className='author-img-container'>
-                            <img className='author-img' src={this.props.story.imageurl} alt='Author' />
-                        </div>
-                    </div>
                     <div className="right-header">
                         <div className="header-text-content">
                             <h4>{this.props.story.title}</h4>
                             <h6>Submitted By: {this.props.story.name}</h6>
+                        </div>
+                    </div>
+                    <div className="left-header">
+                        <div className='author-img-container'>
+                            <img className='author-img' src={this.props.story.imageurl} alt='Author' />
                         </div>
                     </div>
                 </div>

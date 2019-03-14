@@ -12,22 +12,22 @@ const items = [
     id: 1,
     imgUrl: 'https://images.pexels.com/photos/259269/pexels-photo-259269.jpeg?cs=srgb&dl=black-and-white-boy-child-259269.jpg&fm=jpg',
     altText: 'Slide 1',
-    caption: 'Where Your Story is OUR Story',
-    header: 'Welcome to Our Stories Page'
+    caption: 'Where Our Story is YOUR Story',
+    header: 'Welcome to Our Stories Page:'
   },
   {
     id: 2,
-    imgURL: 'https://images.pexels.com/photos/735446/pexels-photo-735446.jpeg?cs=srgb&dl=administration-adult-aged-735446.jpg&fm=jpg',
+    imgUrl: 'https://images.pexels.com/photos/735446/pexels-photo-735446.jpeg?cs=srgb&dl=administration-adult-aged-735446.jpg&fm=jpg',
     altText: 'Slide 2',
-    caption: 'Slide 2',
-    header: 'HEADER'
+    caption: 'Share Your Story',
+    header: ''
   },
   {
     id: 3,
     imgUrl: 'https://images.pexels.com/photos/1739842/pexels-photo-1739842.jpeg?cs=srgb&dl=adorable-affection-boy-1739842.jpg&fm=jpg',
     altText: 'Slide 3',
-    caption: 'Slide 3',
-    header: 'HEADER'
+    caption: 'Learn From the Experience of Others',
+    header: ''
   }
 ];
 
@@ -80,13 +80,15 @@ class StoryCarousel extends Component {
           onExited={this.onExited}
         >
           <img  className="carousel-img" src={item.imgUrl} alt={item.altText} />
+          <div className="captions">
           <CarouselCaption className="text" captionText={item.caption} captionHeader={item.header} />
+          </div>
         </CarouselItem>
       );
     });
 
     return (
-      <div>
+      <div className="carousel-container">
         <style>
           {
             `.custom-tag {
@@ -95,6 +97,7 @@ class StoryCarousel extends Component {
                 background: #CBA328;
                 order: 5;
                 
+              
               }`
           }
         </style>

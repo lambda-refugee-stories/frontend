@@ -1,0 +1,67 @@
+.signup-page{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 20px;
+
+    h1{
+        font-family: $prata;
+        font-size: $main-header-size;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $deep-red;
+    }
+
+    .signup-form{
+        margin: 20px;
+        display: flex;
+        flex-flow: column nowrap;
+
+        .signup-input{
+            text-align: center;
+            margin-bottom: 20px;
+            outline: none;
+            border-radius: 10px;
+            background: whitesmoke;
+            font-size: $sub-header-size;
+        }
+
+        button{
+            outline: none;
+            width: 75%;
+            margin: auto;
+            border-radius: 20px;
+            background: none;
+            font-size: $sub-header-size;
+        }
+    }
+}
+
+.modal-content{
+    padding: 20px;
+    
+    .modal-header, h5{
+        font-family: $rock-salt;
+        font-size: $main-header-size;
+    }
+    .modal-body{
+        font-family: $ubuntu;
+        font-size: $sub-header-size;
+        padding: 20px 0;
+    }
+
+    .modal-footer{
+        .btn-primary{
+            background: firebrick;
+            border: 1px solid firebrick;
+
+            &:hover{
+                background: $deep-red;
+            }
+            .signup-modal-link{
+                text-decoration: none;
+                color: white;
+                font-size: $sub-header-size;
+            }
+        }
+    }
+}
