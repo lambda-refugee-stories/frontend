@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import './Main-Styles/App.scss';
 
 import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 import StoryList from './components/StoriesPage/StoryList/StoryList';
 import LoginPage from './components/Admin/Login/LoginPage';
 import SignUpPage from './components/Admin/SignUp/SignUpPage';
@@ -28,6 +29,7 @@ class App extends Component {
         <Route path="/submissions" component={SubmissionPage}/>
         <Route path="/signup" component={SignUpPage}/>
         <Route path="/submit" component={SubmitPage} />
+        <Footer />
       </div>
     );
   }
