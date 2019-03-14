@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import Story from '../Story/Story';
 import StoryCarousel from '../../Carousel/Carousel';
 
@@ -30,7 +29,9 @@ export default class StoryList extends Component {
                     return (
                         <Story key={story.id} story={story}/>
                     )
-            }})}
+                }
+                else return null;
+            })}
 
 
             </div>
