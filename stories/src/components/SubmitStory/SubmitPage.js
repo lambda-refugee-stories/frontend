@@ -38,27 +38,33 @@ class SubmitPage extends React.Component {
 
     submitStory = (event) => {
         event.preventDefault();
-        axios
-            .post('https://refugee-stories-backend-rkolk.herokuapp.com/submitstory', this.state.submission)
+        if (!this.state.submission.name || !this.state.submission.title || !this.state.submission.imageurl || !this.state.submission.story) {
+            alert("Please fill out all fields.");
+        }
 
-            .then(response => {
-                console.log(response);
-                this.toggleModal();
-                this.setState({
-                    submission: {
-                        name: '',
-                        title: '',
-                        imageurl: '',
-                        story: '',
-                    }
+        else{
+            axios
+                .post('https://refugee-stories-backend-rkolk.herokuapp.com/submitstory', this.state.submission)
+
+                .then(response => {
+                    console.log(response);
+                    this.toggleModal();
+                    this.setState({
+                        submission: {
+                            name: '',
+                            title: '',
+                            imageurl: '',
+                            story: '',
+                        }
+                    })
                 })
-            })
 
-            .catch(err => {
-                console.log(err);
-                alert("Sorry, something went wrong.");
-                this.setState({ error: err });
-            });
+                .catch(err => {
+                    console.log(err);
+                    alert("Sorry, something went wrong.");
+                    this.setState({ error: err });
+                });
+        }
     };
 
     render(){
