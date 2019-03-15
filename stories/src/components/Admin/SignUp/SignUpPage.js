@@ -58,6 +58,7 @@ class SignUpPage extends React.Component {
 
             .catch(err => {
                 console.log(err);
+                alert("Something went wrong. Try a different username; the one you have chosen may already be taken.");
                 this.setState({ error: err });
             });
         }
@@ -108,14 +109,14 @@ class SignUpPage extends React.Component {
                     <ModalHeader>Congratulations!</ModalHeader>
 
                     <ModalBody>
-                        Congratulations on signing up for Refugee Stories. You are now signed up and logged in.
+                        Welcome to Refugee Stories! You are now signed up and logged in.
                         For now, you will not be able to see the submissions on the submissions page.
-                        If approved, an administator will give you the rights to view and edit submissions.
+                        A current administator will give you the rights to view and edit submissions, pending approval.
                         Thank you for your patience. Please feel free to view the published stories in the meantime.
                     </ModalBody>
 
                     <ModalFooter>
-                        <Link to='/'>
+                        <Link to='/'onClick={()=>window.location.reload()}>
                             <Button className="btn-primary">
                                 <span className="signup-modal-link">View Stories</span>
                             </Button>{' '}

@@ -56,6 +56,7 @@ class SubmitPage extends React.Component {
 
             .catch(err => {
                 console.log(err);
+                alert("Sorry, something went wrong.");
                 this.setState({ error: err });
             });
     };

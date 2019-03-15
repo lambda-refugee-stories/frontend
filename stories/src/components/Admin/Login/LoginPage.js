@@ -38,6 +38,7 @@ class LoginPage extends React.Component {
 
             .catch(err => {
                 console.log(err)
+                alert("Something went wrong. Double-check your username and password to ensure they are correct.");
                 this.setState({ error: err })
             });
     };
@@ -75,7 +76,7 @@ class LoginPage extends React.Component {
                 </form>
 
                 <div className="login-signup">
-                    <span className="login-text">Need to register as a user?  </span>
+                    <span className="login-text">Need to register as an administrator?  </span>
                     <Link to="/signup" className="login-link">Sign Up</Link>
                 </div>
             </div>

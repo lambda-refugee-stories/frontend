@@ -4,13 +4,17 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-}
+    
+    .sub-page-header{
+        font-family: $prata;
+        text-align: center;
+        font-size: $main-header-size;
+        padding: 30px 0 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $deep-red;
+    }
 
-.sub-page-header{
-    font-family: $prata;
-    text-align: center;
-    font-size: $main-header-size;
-    padding: 30px 0 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid $deep-red;
+    .second-sub-header{
+        padding-top: 50px;
+    }
 }
