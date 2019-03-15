@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class LoginPage extends React.Component {
     constructor(){
@@ -37,6 +38,7 @@ class LoginPage extends React.Component {
 
             .catch(err => {
                 console.log(err)
+                alert("Something went wrong. Double-check your username and password to ensure they are correct.");
                 this.setState({ error: err })
             });
     };
@@ -45,6 +47,7 @@ class LoginPage extends React.Component {
         return(
             <div className="login-page">
                 <h1>Administrator Login</h1>
+                
                 <form className="login-form"
                     onFocus={event=> event.target.placeholder=""}
                     onBlur={event=> event.target.placeholder=event.target.name}
@@ -71,6 +74,11 @@ class LoginPage extends React.Component {
                     
                     <button type="submit">Login</button>
                 </form>
+
+                <div className="login-signup">
+                    <span className="login-text">Need to register as an administrator?  </span>
+                    <Link to="/signup" className="login-link">Sign Up</Link>
+                </div>
             </div>
         );
     }
