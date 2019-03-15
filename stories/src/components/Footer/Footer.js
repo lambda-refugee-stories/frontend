@@ -33,7 +33,7 @@ function Footer(props) {
                     <Link to="/" onClick={props.logout} className="nav-text">Log Out</Link>
                 </div>
                 <div className="copyright">
-                    <h4>©Copyright Refugee Stories 2019</h4>
+                    <h4>© Refugee Stories 2019</h4>
                 </div>
             </div>
         </div>
