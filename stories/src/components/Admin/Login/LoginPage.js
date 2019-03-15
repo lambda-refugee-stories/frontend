@@ -46,6 +46,7 @@ class LoginPage extends React.Component {
         return(
             <div className="login-page">
                 <h1>Administrator Login</h1>
+                
                 <form className="login-form"
                     onFocus={event=> event.target.placeholder=""}
                     onBlur={event=> event.target.placeholder=event.target.name}
@@ -72,7 +73,11 @@ class LoginPage extends React.Component {
                     
                     <button type="submit">Login</button>
                 </form>
-                <p><span>Need to register as a user? </span><Link to="/signup">Sign Up</Link></p>
+
+                <div className="login-signup">
+                    <span className="login-text">Need to register as a user?  </span>
+                    <Link to="/signup" className="login-link">Sign Up</Link>
+                </div>
             </div>
         );
     }

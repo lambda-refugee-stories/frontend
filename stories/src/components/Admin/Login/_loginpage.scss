@@ -34,4 +34,21 @@
             font-size: $sub-header-size;
         }
     }
+
+    .login-signup{
+        margin-top: 20px;
+
+        .login-text, .login-link{
+            font-family: $ubuntu;
+            font-size: $body-text-size;
+        }
+    
+        .login-link{
+            color: $deep-red;
+    
+            &:hover{
+                color: firebrick;
+            }
+        }
+    }
 }
