@@ -26,7 +26,7 @@ const items = [
     id: 3,
     imgUrl: 'https://images.pexels.com/photos/1739842/pexels-photo-1739842.jpeg?cs=srgb&dl=adorable-affection-boy-1739842.jpg&fm=jpg',
     altText: 'Slide 3',
-    caption: 'Learn From the Experience of Others',
+    caption: 'Learn From the Experiences of Others',
     header: ''
   }
 ];
@@ -94,7 +94,7 @@ class StoryCarousel extends Component {
             `.custom-tag {
                 max-width: 100%;
                 height: 500px;
-                background: #CBA328;
+                background: black;
                 order: 5;
                 
               

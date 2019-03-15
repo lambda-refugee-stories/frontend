@@ -35,11 +35,15 @@
         border: 2px solid lightgrey;
         border-bottom: 2px solid grey;
         border-right: 2px solid grey;
-        width: 75%;
+        width: 30%;
         margin: auto;
         border-radius: 20px;
         background: none;
         font-size: $sub-header-size;
+
+        @media screen and (max-width: 800px){
+            width: 75%;
+        }
     }
 
     @media screen and (max-width: 800px){

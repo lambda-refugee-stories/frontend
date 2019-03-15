@@ -8,7 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    box-shadow: 0px 0px 10px $grey;
+    box-shadow: 0px 0px 15px $grey;
     background-color: $mustard;
     
 
@@ -23,13 +23,14 @@
 
         @media screen and (max-width: 800px) {
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
         }
 
         .left-header{
             display: flex;
             width: 45%;
             justify-content: center;
+            
 
             .author-img-container {
                 border-radius: 10px;
@@ -42,6 +43,10 @@
                     height: 100%;
                 }
     
+            }
+
+            @media screen and (max-width: 800px) {
+                width: 100%;
             }
         }
 
@@ -62,6 +67,9 @@
                 h4{
                     font-size: $main-header-size;
                     width:100%;
+                    font-family: $rock-salt;
+                    display: flex;
+                    justify-content: flex-start;
                 }
     
                 h6 {
@@ -69,11 +77,86 @@
                     width: 100%;
                 }
             }
+            @media screen and (max-width: 800px) {
+                width: 100%;
+            }
         }
 
 
 
         
+    }
+
+    .story-header-img-right {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 25px;
+        
+
+        @media screen and (max-width: 800px) {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+        }
+
+        .left-header{
+            display: flex;
+            width: 45%;
+            justify-content: center;
+            
+
+            .author-img-container {
+                border-radius: 10px;
+                margin: 10px;
+              
+    
+                img {
+                    width: 100%;
+                    border-radius: 10px;
+                    height: 100%;
+                }
+    
+            }
+
+            @media screen and (max-width: 800px) {
+                width: 100%;
+            }
+        }
+
+        .right-header {
+            display: flex;
+            width: 45%;
+            justify-content: flex-start;
+
+            .header-text-content {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding-top: 10px;
+                padding-left: 5%;
+                
+    
+    
+                h4{
+                    font-size: $main-header-size;
+                    width:100%;
+                    font-family: $rock-salt;
+                    display: flex;
+                    justify-content: flex-start;
+                }
+    
+                h6 {
+                    font-size: $sub-header-size;
+                    width: 100%;
+                }
+            }
+            @media screen and (max-width: 800px) {
+                width: 100%;
+            }
+        }
     }
 
     .story-content {

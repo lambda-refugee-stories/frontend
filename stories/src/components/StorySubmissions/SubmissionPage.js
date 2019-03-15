@@ -74,7 +74,7 @@ class SubmissionPage extends Component {
                     else return null;
                 })}
 
-                <h2 className='sub-page-header'>Approved Submissions</h2>
+                <h2 className='sub-page-header second-sub-header'>Approved Submissions</h2>
 
                 {sorted.reverse().map(story => {
                     if (story.isapproved) {
