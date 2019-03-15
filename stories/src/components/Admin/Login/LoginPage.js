@@ -25,22 +25,27 @@ class LoginPage extends React.Component {
 
     login = (event) => {
         event.preventDefault();
+        if (!this.state.credentials.username || !this.state.credentials.password) {
+            alert("Please fill out all fields.");
+        }
 
-        axios
-            .post('https://refugee-stories-backend-rkolk.herokuapp.com/login', this.state.credentials)
+        else{
+            axios
+                .post('https://refugee-stories-backend-rkolk.herokuapp.com/login', this.state.credentials)
 
-            .then(response => {
-                console.log(response)
-                localStorage.setItem('jwt', response.data.token)
-                window.location.reload();
-                this.props.history.push('/submissions');
-            })
+                .then(response => {
+                    console.log(response)
+                    localStorage.setItem('jwt', response.data.token)
+                    window.location.reload();
+                    this.props.history.push('/submissions');
+                })
 
-            .catch(err => {
-                console.log(err)
-                alert("Something went wrong. Double-check your username and password to ensure they are correct.");
-                this.setState({ error: err })
-            });
+                .catch(err => {
+                    console.log(err)
+                    alert("Something went wrong. Double-check your username and password to ensure they are correct.");
+                    this.setState({ error: err })
+                });
+        }
     };
 
     render(){
