@@ -45,8 +45,12 @@ class SignUpPage extends React.Component {
     signUp = (event) => {
         event.preventDefault();
         if (this.state.credentials.password !== this.state.confirmPass) {
-            alert("Passwords don't match");
-        } else {
+            alert("Passwords do not match.");
+        } else if (!this.state.credentials.username || !this.state.credentials.password || !this.state.confirmPass) {
+            alert("Please fill out all fields.");
+        }
+
+        else{
             axios
             .post('https://refugee-stories-backend-rkolk.herokuapp.com/signup', this.state.credentials)
 
